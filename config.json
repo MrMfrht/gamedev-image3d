@@ -1,0 +1,26 @@
+{
+  "project": "gamedev-image3d",
+  "models": [
+    "pixal3d",
+    "trellis2"
+  ],
+  "storage_mode": "persistent",
+  "data_center_id": "EU-RO-1",
+  "gpu_type_ids": [
+    "NVIDIA A100 80GB PCIe"
+  ],
+  "volume_gb": 80,
+  "container_disk_gb": 30,
+  "workers_min": 0,
+  "workers_max": 1,
+  "idle_timeout_seconds": 5,
+  "execution_timeout_seconds": 1500,
+  "generation_timeout_seconds": 1200,
+  "base_image": "runpod/pytorch@sha256:cb154fcca15d1d6ce858cfa672b76505e30861ef981d28ec94bd44168767d853",
+  "base_image_reference": "runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04",
+  "base_image_tag_at_review": "2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04",
+  "comfy_commit": "bbd810e647c64da8212b0d4ab94f1354c9d523f6",
+  "template_commit": "611c497cca4087967ecd85fd62bc12fa7130e885",
+  "runpod_sdk_version": "2.2.0",
+  "budget_usd": 5
+}

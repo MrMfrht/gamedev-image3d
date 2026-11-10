@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!container-requirements.txt
+!config.json
+!cloud/
+!cloud/*.py
+!cloud/*.json
+!cloud/workflows/
+!cloud/workflows/*.json
