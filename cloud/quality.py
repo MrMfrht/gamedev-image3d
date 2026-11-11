@@ -26,7 +26,7 @@ def resolve_quality(preset='balanced', overrides=None):
     choices = {'geometry_resolution': (1024,1536), 'texture_size': (512,1024,2048,4096),
                'normal_size': (512,1024,2048,4096), 'ao_size': (256,512,1024,2048),
                'remesh_resolution': (384,512,768,1024)}
-    ranges = {'target_faces': (10000,1000000), 'smooth_iterations': (0,30),
+    ranges = {'target_faces': (5000,1000000), 'smooth_iterations': (0,30),
               'structure_steps': (4,50), 'shape_steps': (4,50),
               'refine_steps': (4,50), 'texture_steps': (4,50), 'ao_samples': (8,128)}
     for key,value in settings.items():
