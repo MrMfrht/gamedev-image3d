@@ -7,9 +7,10 @@ RUN /opt/gamedev/venv/bin/pip install --no-compile --extra-index-url https://dow
 ARG COMFY_COMMIT=bbd810e647c64da8212b0d4ab94f1354c9d523f6
 RUN git clone https://github.com/Comfy-Org/ComfyUI.git ComfyUI && cd ComfyUI && git checkout ${COMFY_COMMIT}
 COPY cloud/ /opt/gamedev/cloud/
+COPY handler.py /opt/gamedev/handler.py
 COPY config.json /opt/gamedev/cloud/config.json
 RUN /opt/gamedev/venv/bin/pip check && /opt/gamedev/venv/bin/pip freeze > /opt/gamedev/resolved-requirements.txt
 ENV GAMEDEV_PREBUILT_RUNTIME=/opt/gamedev GAMEDEV_MODEL=trellis2
 ARG BUILD_REVISION=development
 ENV GAMEDEV_BUNDLE_SHA256=${BUILD_REVISION}
-CMD ["/opt/gamedev/venv/bin/python", "-u", "/opt/gamedev/cloud/worker.py"]
+CMD ["/opt/gamedev/venv/bin/python", "-u", "/opt/gamedev/handler.py"]

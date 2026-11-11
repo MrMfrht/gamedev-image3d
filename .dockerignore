@@ -1,5 +1,6 @@
 **
 !Dockerfile
+!handler.py
 !container-requirements.txt
 !config.json
 !cloud/
