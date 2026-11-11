@@ -6,6 +6,14 @@ from quality import resolve_quality
 from worker import build_prompt
 
 class QualityTests(unittest.TestCase):
+    def test_low_poly_preview_only_changes_decimation(self):
+        expected = build_prompt('trellis2', 42, 'preview', 'front.png')
+        expected['186']['inputs']['target_face_count'] = 5000
+        actual = build_prompt('trellis2', 42, 'preview', 'front.png', {'target_faces': 5000})
+        self.assertEqual(actual, expected)
+        with self.assertRaises(ValueError):
+            resolve_quality('preview', {'target_faces': 4999})
+
     def test_bounded_controls_reject_expensive_or_unknown_inputs(self):
         for settings in [{'texture_size':8192},{'shape_steps':10000},
                          {'target_faces':True},{'custom_graph':'anything'}]:
